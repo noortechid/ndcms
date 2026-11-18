@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+@source "../views/**/*.php";
+
+@theme {
+    --color-primary: #D6A6B1;
+    --color-primary-dark: #A87583;
+    --color-secondary: #EBCBD2;
+
+    --color-background: #FFF9F7;
+    --color-surface: #FFFFFF;
+
+    --color-text-primary: #59434A;
+    --color-text-secondary: #927B81;
+
+    --color-border: #F0E1E4;
+
+    --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+body {
+    font-family: var(--font-sans);
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+}
