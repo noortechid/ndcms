@@ -43,66 +43,71 @@ final class Product
         return $stmt->fetch() ?: null;
     }
 
-public function create(array $data): int
-{
-    $stmt = $this->db->prepare(
-        'INSERT INTO products (
-            category_id,
-            product_code,
-            name,
-            description,
-            price,
-            is_available,
-            requires_recipe
-        ) VALUES (
-            :category_id,
-            :product_code,
-            :name,
-            :description,
-            :price,
-            :is_available,
-            :requires_recipe
-        )'
-    );
+    public function create(array $data): int
+    {
+        $stmt = $this->db->prepare(
+            'INSERT INTO products (
+                category_id,
+                product_code,
+                name,
+                description,
+                price,
+                image_path,
+                is_available,
+                requires_recipe
+            ) VALUES (
+                :category_id,
+                :product_code,
+                :name,
+                :description,
+                :price,
+                :image_path,
+                :is_available,
+                :requires_recipe
+            )'
+        );
 
-    $stmt->execute([
-        'category_id' => $data['category_id'],
-        'product_code' => $data['product_code'] ?: null,
-        'name' => $data['name'],
-        'description' => $data['description'] ?: null,
-        'price' => $data['price'],
-        'is_available' => (int) $data['is_available'],
-        'requires_recipe' => (int) $data['requires_recipe'],
-    ]);
+        $stmt->execute([
+            'category_id' => $data['category_id'],
+            'product_code' => $data['product_code'] ?: null,
+            'name' => $data['name'],
+            'description' => $data['description'] ?: null,
+            'price' => $data['price'],
+            'image_path' => $data['image_path'] ?? null,
+            'is_available' => (int) $data['is_available'],
+            'requires_recipe' => (int) $data['requires_recipe'],
+        ]);
 
-    return (int) $this->db->lastInsertId();
-}
+        return (int) $this->db->lastInsertId();
+    }
 
-public function update(int $id, array $data): bool
-{
-    $stmt = $this->db->prepare(
-        'UPDATE products SET
-            category_id = :category_id,
-            product_code = :product_code,
-            name = :name,
-            description = :description,
-            price = :price,
-            is_available = :is_available,
-            requires_recipe = :requires_recipe
-         WHERE id = :id'
-    );
+    public function update(int $id, array $data): bool
+    {
+        $stmt = $this->db->prepare(
+            'UPDATE products SET
+                category_id = :category_id,
+                product_code = :product_code,
+                name = :name,
+                description = :description,
+                price = :price,
+                image_path = :image_path,
+                is_available = :is_available,
+                requires_recipe = :requires_recipe
+             WHERE id = :id'
+        );
 
-    return $stmt->execute([
-        'id' => $id,
-        'category_id' => $data['category_id'],
-        'product_code' => $data['product_code'] ?: null,
-        'name' => $data['name'],
-        'description' => $data['description'] ?: null,
-        'price' => $data['price'],
-        'is_available' => (int) $data['is_available'],
-        'requires_recipe' => (int) $data['requires_recipe'],
-    ]);
-}
+        return $stmt->execute([
+            'id' => $id,
+            'category_id' => $data['category_id'],
+            'product_code' => $data['product_code'] ?: null,
+            'name' => $data['name'],
+            'description' => $data['description'] ?: null,
+            'price' => $data['price'],
+            'image_path' => $data['image_path'] ?? null,
+            'is_available' => (int) $data['is_available'],
+            'requires_recipe' => (int) $data['requires_recipe'],
+        ]);
+    }
 
     public function setActive(int $id, bool $active): bool
     {
@@ -129,17 +134,17 @@ public function update(int $id, array $data): bool
 
         $params = [];
 
-if (!empty($filters['search'])) {
-    $sql .= " AND (
-        p.name LIKE :search_name
-        OR p.product_code LIKE :search_code
-    )";
+        if (!empty($filters['search'])) {
+            $sql .= " AND (
+                p.name LIKE :search_name
+                OR p.product_code LIKE :search_code
+            )";
 
-    $search = '%' . $filters['search'] . '%';
+            $search = '%' . $filters['search'] . '%';
 
-    $params['search_name'] = $search;
-    $params['search_code'] = $search;
-}
+            $params['search_name'] = $search;
+            $params['search_code'] = $search;
+        }
 
         if (!empty($filters['category_id'])) {
             $sql .= ' AND p.category_id = :category_id';
@@ -159,39 +164,39 @@ if (!empty($filters['search'])) {
         return $stmt->fetchAll();
     }
 
-public function availableForPos(): array
-{
-    $stmt = $this->db->query(
-        "SELECT
-            p.id,
-            p.category_id,
-            p.name,
-            p.product_code,
-            p.price,
-            p.image_path,
-            c.name AS category_name
-         FROM products p
-         INNER JOIN categories c ON c.id = p.category_id
-         WHERE p.is_active = 1
-           AND p.is_available = 1
-           AND c.is_active = 1
-         ORDER BY c.name ASC, p.name ASC"
-    );
+    public function availableForPos(): array
+    {
+        $stmt = $this->db->query(
+            "SELECT
+                p.id,
+                p.category_id,
+                p.name,
+                p.product_code,
+                p.price,
+                p.image_path,
+                c.name AS category_name
+             FROM products p
+             INNER JOIN categories c ON c.id = p.category_id
+             WHERE p.is_active = 1
+               AND p.is_available = 1
+               AND c.is_active = 1
+             ORDER BY c.name ASC, p.name ASC"
+        );
 
-    return $stmt->fetchAll();
-}
+        return $stmt->fetchAll();
+    }
 
-public function setAvailability(int $id, bool $available): bool
-{
-    $stmt = $this->db->prepare(
-        'UPDATE products
-         SET is_available = :is_available
-         WHERE id = :id'
-    );
+    public function setAvailability(int $id, bool $available): bool
+    {
+        $stmt = $this->db->prepare(
+            'UPDATE products
+             SET is_available = :is_available
+             WHERE id = :id'
+        );
 
-    return $stmt->execute([
-        'id' => $id,
-        'is_available' => (int) $available,
-    ]);
-}
+        return $stmt->execute([
+            'id' => $id,
+            'is_available' => (int) $available,
+        ]);
+    }
 }

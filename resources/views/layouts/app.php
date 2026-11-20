@@ -70,7 +70,39 @@ $userInitial = function_exists('mb_substr') ? mb_strtoupper(mb_substr($userName,
             <?php endforeach; ?>
         </nav>
         <div class="sidebar-bottom">
-            <div class="sidebar-outlet"><span class="outlet-dot"></span><span><strong>ND Coffee</strong><small>Single Outlet</small></span></div>
+<form action="/logout" method="POST">
+    <input
+        type="hidden"
+        name="_token"
+        value="<?= htmlspecialchars($csrfToken, ENT_QUOTES, 'UTF-8') ?>"
+    >
+
+    <button
+        type="submit"
+        class="inline-flex items-center gap-2 rounded-xl border border-border
+               px-4 py-2.5 text-sm font-medium
+               text-text-secondary transition
+               hover:text-red-600"
+    >
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+        >
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+            <polyline points="16 17 21 12 16 7"/>
+            <line x1="21" y1="12" x2="9" y2="12"/>
+        </svg>
+
+        <span>Logout</span>
+    </button>
+</form>
         </div>
     </aside>
 
@@ -79,7 +111,7 @@ $userInitial = function_exists('mb_substr') ? mb_strtoupper(mb_substr($userName,
         <header class="topbar">
             <div class="topbar-heading">
                 <button id="sidebarToggle" class="mobile-menu-button" aria-label="Buka navigasi"><i data-lucide="menu"></i></button>
-                <div><p class="eyebrow">ND COFFEE MANAGEMENT</p><h1><?= htmlspecialchars($pageTitle ?? 'Dashboard') ?></h1></div>
+                <div><h1>Welcome to NDCMS</h1><p class="mt-1 text-sm text-[#9A8178]">Simplifying Operations, Brewing Better Experiences.</p></div>
             </div>
             <div class="topbar-actions">
                 <div class="topbar-date"><i data-lucide="calendar-days"></i><span><?= htmlspecialchars(date('d F Y')) ?></span></div>
