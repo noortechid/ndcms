@@ -1,558 +1,443 @@
 # ☕ ND Coffee Management System (NDCMS)
 
-### A Modern Coffee Shop Management Solution
-
-**Simplify Operations. Manage Smarter. Serve Better.**
-
-NDCMS is a web-based Coffee Shop Management System designed to streamline daily business operations at ND Coffee. It integrates sales transactions, inventory control, recipe management, purchasing, employee management, and business reporting into one centralized platform.
-
----
+<p align="center">
+  <strong>Simplify Operations. Manage Smarter. Serve Better.</strong>
+</p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/PHP-Native-777BB4?style=for-the-badge&logo=php&logoColor=white" alt="PHP">
+  A web-based Coffee Shop Management System designed to streamline daily operations, inventory management, purchasing, and sales activities at ND Coffee.
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/PHP-Native-777BB4?style=for-the-badge&logo=php&logoColor=white" alt="PHP Native">
   <img src="https://img.shields.io/badge/MariaDB-Database-003545?style=for-the-badge&logo=mariadb&logoColor=white" alt="MariaDB">
   <img src="https://img.shields.io/badge/Tailwind_CSS-Styling-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="Tailwind CSS">
   <img src="https://img.shields.io/badge/JavaScript-Vanilla-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript">
 </p>
 
+---
+
+## 📌 Overview
+
+**ND Coffee Management System (NDCMS)** is a web-based information system developed to support and improve the daily operational activities of ND Coffee.
+
+The system centralizes essential coffee shop operations into one integrated platform, helping staff manage products, ingredients, inventory, purchasing, sales transactions, cashier shifts, and business reports.
+
+NDCMS is designed with a clean, modern, and user-friendly interface, combining operational efficiency with a warm and elegant visual identity.
+
+## 🖼️ Application Preview
+
 <p align="center">
-  <strong>Custom MVC Architecture · Service Layer · Role-Based Access Control</strong>
+  <img src="screenshots/dashboard.png" width="100%" alt="NDCMS Dashboard">
+  <br>
+  <strong>Dashboard</strong>
+  <br>
+  <sub>Business performance overview and operational insights.</sub>
+</p>
+
+<p align="center">
+  <img src="screenshots/pos.png" width="100%" alt="NDCMS Point of Sale">
+  <br>
+  <strong>Point of Sale</strong>
+  <br>
+  <sub>An intuitive interface for managing coffee shop transactions.</sub>
+</p>
+
+<p align="center">
+  <img src="screenshots/products.png" width="100%" alt="NDCMS Product Management">
+  <br>
+  <strong>Product Management</strong>
+  <br>
+  <sub>Centralized product and category management.</sub>
+</p>
+
+<p align="center">
+  <img src="screenshots/inventory.png" width="100%" alt="NDCMS Inventory Management">
+  <br>
+  <strong>Inventory Management</strong>
+  <br>
+  <sub>Ingredient stock monitoring and stock movement tracking.</sub>
+</p>
+
+<p align="center">
+  <img src="screenshots/purchasing.png" width="100%" alt="NDCMS Purchasing">
+  <br>
+  <strong>Purchasing Management</strong>
+  <br>
+  <sub>Supplier management and purchase order processing.</sub>
+</p>
+
+<p align="center">
+  <img src="screenshots/reports.png" width="100%" alt="NDCMS Reports">
+  <br>
+  <strong>Reports & Analytics</strong>
+  <br>
+  <sub>Sales summaries and business performance reporting.</sub>
+</p>
+
+<p align="center">
+  <img src="screenshots/employees.png" width="100%" alt="NDCMS Employee Management">
+  <br>
+  <strong>Employee Management</strong>
+  <br>
+  <sub>Employee records and system user administration.</sub>
+</p>
+
+<p align="center">
+  <img src="screenshots/login.png" width="100%" alt="NDCMS Login">
+  <br>
+  <strong>Login Page</strong>
+  <br>
+  <sub>Secure authentication with a clean and elegant interface.</sub>
 </p>
 
 ---
 
-## 📖 Table of Contents
+## 🤝 Client Collaboration
 
-- [Overview](#-overview)
-- [Key Features](#-key-features)
-- [System Modules](#-system-modules)
-- [User Roles](#-user-roles)
-- [Technology Stack](#-technology-stack)
-- [System Architecture](#-system-architecture)
-- [Database Structure](#-database-structure)
-- [Project Structure](#-project-structure)
-- [Installation](#-installation)
-- [Configuration](#-configuration)
-- [Running the Application](#-running-the-application)
-- [Business Workflow](#-business-workflow)
-- [Security](#-security)
-- [Development Status](#-development-status)
-- [Future Improvements](#-future-improvements)
-- [License](#-license)
+NDCMS was developed through a collaborative process involving project planning, requirement discussions, and coordination with the client.
 
----
+<p align="center">
+  <img src="screenshots/client-meeting.jpg" width="100%" alt="NDCMS Client Meeting Documentation">
+  <br>
+  <strong>Client Meeting & Project Discussion</strong>
+  <br>
+  <sub>Documentation of project coordination, requirement discussions, and development progress with ND Coffee.</sub>
+</p>
 
-## 🌟 Overview
-
-Managing a coffee shop involves more than processing customer orders. It requires accurate inventory tracking, consistent product recipes, purchasing coordination, employee management, and reliable financial records.
-
-NDCMS addresses these operational needs through an integrated management platform.
-
-The system is designed around a single-outlet coffee shop business model, with a focus on operational efficiency, data consistency, and controlled access.
-
-### Project Objectives
-
-- Centralize coffee shop operational management.
-- Simplify point-of-sale transactions.
-- Maintain accurate ingredient stock records.
-- Standardize product recipes and ingredient consumption.
-- Manage supplier relationships and purchasing activities.
-- Monitor cashier shifts and cash reconciliation.
-- Provide meaningful sales and operational reports.
+This collaboration helped align the system's development with the client's operational needs and business requirements.
 
 ---
 
 ## ✨ Key Features
 
-### 🖥️ Dashboard
-- Daily revenue summary.
-- Daily transaction statistics.
-- Active product overview.
-- Low-stock ingredient alerts.
-- Weekly sales visualization.
-- Recent transaction overview.
-
-### 🛒 Point of Sale
-- Product catalog and search.
-- Shopping cart management.
-- Quantity and discount calculation.
-- Multiple payment methods.
-- Automatic change calculation.
-- Transaction validation.
-- Integration with active cashier shifts.
-
-### 📦 Product Management
-- Product CRUD operations.
-- Category management.
-- Product availability control.
-- Active/inactive product status.
-- Recipe-based and non-recipe product configuration.
-
-### 🧪 Recipe & HPP Management
-- Product recipe management.
-- Ingredient composition.
-- Ingredient quantity configuration.
-- Recipe and ingredient validation.
-
-### 🧾 Inventory Management
-- Stock In.
-- Stock Out.
-- Stock Adjustment.
-- Stock movement history.
-- Minimum stock monitoring.
-- Automatic ingredient deduction through sales.
-
-### 🛍️ Purchasing Management
-- Supplier management.
-- Purchase order creation.
-- Purchase order status management.
-- Partial receiving.
-- Full receiving.
-- Purchase receipt history.
-- Automatic inventory updates upon receiving.
-
-### 👥 Employee & User Management
-- Employee records.
-- User account management.
-- Role assignment.
-- Account status management.
-- Employee and user relationship.
-
-### ⏱️ Shift Management
-- Open Shift.
-- Opening cash recording.
-- Cash and non-cash sales tracking.
-- Cash In and Cash Out.
-- Expected cash calculation.
-- Close Shift.
-- Cash difference reconciliation.
-- Shift history.
-
-### 📊 Reports
-- Sales reporting.
-- Date range filtering.
-- Transaction summaries.
-- PDF export.
-- Print functionality.
-
-### 🔐 Authentication & Authorization
-- Secure login and logout.
-- Session management.
-- Role-Based Access Control.
-- Authentication middleware.
-- Permission middleware.
-- CSRF protection.
-
----
+- **Centralized Management** — Manage essential coffee shop operations through one integrated system.
+- **Role-Based Access Control** — Control system access based on employee responsibilities.
+- **Sales Management** — Process transactions through an integrated Point of Sale interface.
+- **Inventory Monitoring** — Track ingredient quantities and stock movements.
+- **Recipe Management** — Define ingredient requirements for products.
+- **Purchasing Management** — Manage suppliers, purchase orders, and receiving activities.
+- **Cashier Shift Management** — Monitor cashier sessions and cash reconciliation.
+- **Business Reporting** — Review sales performance and operational information.
+- **Responsive Interface** — A clean and user-friendly interface for daily operations.
 
 ## 🧩 System Modules
 
 | Module | Description |
 |---|---|
-| Dashboard | Business performance overview |
-| Authentication | Login, logout, and session handling |
-| User Management | User accounts and role assignments |
-| Employee Management | Employee records |
-| Category Management | Product category organization |
-| Product Management | Product catalog management |
-| Ingredient Management | Raw material management |
-| Recipe Management | Product ingredient composition |
-| Inventory Management | Ingredient stock control |
-| Supplier Management | Supplier records |
-| Purchasing | Purchase orders and receiving |
-| Shift Management | Cashier shift and cash control |
-| Point of Sale | Sales transaction processing |
-| Transactions | Transaction history and details |
-| Reports | Sales reports and PDF export |
+| Dashboard | Operational overview and business summaries |
+| Point of Sale | Product selection and transaction processing |
+| Transactions | Transaction history and detail records |
+| Products | Product information and availability |
+| Categories | Product category management |
+| Ingredients | Ingredient master data |
+| Recipes | Product ingredient composition |
+| Inventory | Stock monitoring and movement management |
+| Purchasing | Supplier and purchase order management |
+| Receiving | Partial and full purchase receiving |
+| Shifts | Cashier opening, closing, and reconciliation |
+| Employees | Employee information management |
+| User Management | System accounts and access management |
+| Reports | Sales and operational reporting |
 
----
+## 👥 User Roles & Permissions
 
-## 👤 User Roles
-
-NDCMS implements a static Role-Based Access Control (RBAC) mechanism.
+NDCMS implements role-based access control (RBAC) to separate system responsibilities.
 
 | Role | Responsibilities |
 |---|---|
-| **Owner** | Full system access and business oversight |
-| **Admin** | Operational and administrative management |
-| **Cashier** | POS transactions and cashier shift operations |
-| **Inventory Staff** | Ingredient, inventory, recipe viewing, and purchasing operations |
+| Owner | Full system access and management |
+| Admin | Operational and administrative management |
+| Cashier | POS transactions and cashier shifts |
+| Inventory Staff | Inventory, ingredients, recipes, and purchasing |
 
-Each role receives access only to the modules and actions permitted by its authorization rules.
-
----
+Each role receives access according to its assigned permissions.
 
 ## 🛠️ Technology Stack
 
-### Backend
-- **PHP Native** — Server-side application development.
-- **MariaDB** — Relational database management.
-- **PDO** — Database connectivity and prepared statements.
-- **Object-Oriented Programming** — Application development paradigm.
+| Technology | Purpose |
+|---|---|
+| PHP Native | Backend application development |
+| MariaDB | Relational database management |
+| PDO | Database connectivity |
+| HTML5 | Application structure |
+| Tailwind CSS | Interface styling |
+| Vanilla JavaScript | Client-side interactions |
+| Apache / PHP Development Server | Application hosting environment |
 
-### Frontend
-- **HTML5** — Application structure.
-- **Tailwind CSS** — Utility-first styling.
-- **Vanilla JavaScript** — Client-side interactions.
-
-### Architecture & Design
-- Custom MVC Architecture.
-- Service Layer Architecture.
-- Front Controller Pattern.
-- Middleware.
-- Data Access Layer.
-- Separation of Concerns.
-
-### Development Environment
-- PHP Development Server.
-- Tailwind CSS Standalone CLI.
-- MariaDB Client.
-
----
+NDCMS uses a native PHP implementation without a full-stack framework.
 
 ## 🏗️ System Architecture
 
-NDCMS uses a custom MVC architecture enhanced with a Service Layer to separate application responsibilities.
+The application follows a custom MVC architecture with a service layer to separate responsibilities and improve maintainability.
 
 ```text
-                 ┌──────────────────┐
-                 │      Browser     │
-                 └────────┬─────────┘
-                          │
-                 ┌────────▼─────────┐
-                 │  Front Controller│
-                 │ public/index.php │
-                 └────────┬─────────┘
-                          │
-                 ┌────────▼─────────┐
-                 │      Router      │
-                 └────────┬─────────┘
-                          │
-                 ┌────────▼─────────┐
-                 │    Middleware    │
-                 │ Auth & Permission│
-                 └────────┬─────────┘
-                          │
-                 ┌────────▼─────────┐
-                 │    Controller    │
-                 └────────┬─────────┘
-                          │
-                 ┌────────▼─────────┐
-                 │   Service Layer  │
-                 └────────┬─────────┘
-                          │
-                 ┌────────▼─────────┐
-                 │      Model       │
-                 └────────┬─────────┘
-                          │
-                 ┌────────▼─────────┐
-                 │     MariaDB      │
-                 └──────────────────┘
+                 CLIENT / BROWSER
+                        |
+                        v
+                 PUBLIC ENTRY POINT
+                   public/index.php
+                        |
+                        v
+                     ROUTER
+                        |
+                        v
+                    MIDDLEWARE
+                 Authentication
+                 Authorization
+                        |
+                        v
+                   CONTROLLER
+                        |
+                        v
+                   SERVICE LAYER
+              Business Logic Processing
+                        |
+                        v
+                  MODEL / DATA ACCESS
+                        |
+                        v
+                    MARIADB
 ```
 
-### Architecture Responsibilities
+### Architecture Components
 
-| Layer | Responsibility |
-|---|---|
-| Front Controller | Entry point for incoming requests |
-| Router | Maps URLs to application controllers |
-| Middleware | Handles authentication and authorization |
-| Controller | Handles HTTP requests and responses |
-| Service | Implements business logic and workflows |
-| Model | Handles database operations |
-| View | Renders application interfaces |
+- **Core:** Routing, database connection, controllers, and middleware infrastructure.
+- **Controllers:** Handle incoming requests and coordinate application operations.
+- **Models:** Manage database queries and data access.
+- **Services:** Handle business logic and operational workflows.
+- **Views:** Render the user interface.
+- **Middleware:** Handle authentication and authorization.
 
----
-
-## 🗄️ Database Structure
-
-The database consists of 16 primary tables organized around the application's operational requirements.
-
-| No. | Table | Purpose |
-|---:|---|---|
-| 1 | `users` | User accounts and access roles |
-| 2 | `employees` | Employee information |
-| 3 | `cashier_shifts` | Cashier shift records |
-| 4 | `categories` | Product categories |
-| 5 | `products` | Product information |
-| 6 | `ingredients` | Raw material information |
-| 7 | `recipes` | Product recipes |
-| 8 | `recipe_items` | Recipe ingredient details |
-| 9 | `stock_movements` | Inventory movement history |
-| 10 | `suppliers` | Supplier information |
-| 11 | `purchases` | Purchase orders |
-| 12 | `purchase_items` | Purchase order details |
-| 13 | `purchase_receipts` | Goods receiving records |
-| 14 | `purchase_receipt_items` | Received item details |
-| 15 | `transactions` | Sales transaction records |
-| 16 | `transaction_items` | Transaction product details |
-
----
-
-## 📁 Project Structure
-
-The application follows a modular directory structure.
+## 📂 Project Structure
 
 ```text
-ndcms/
+NDCMS/
 │
 ├── app/
 │   ├── Controllers/
 │   ├── Core/
-│   ├── Middleware/
+│   │   └── Middleware/
 │   ├── Models/
 │   └── Services/
 │
 ├── config/
-│
-├── database/
-│   ├── migrations/
-│   └── seeds/
 │
 ├── public/
 │   ├── assets/
 │   │   ├── css/
 │   │   ├── js/
 │   │   └── images/
-│   │
 │   └── index.php
 │
 ├── resources/
 │   ├── css/
 │   └── views/
 │       ├── layouts/
-│       ├── dashboard/
+│       ├── auth/
 │       ├── products/
 │       ├── inventory/
 │       ├── purchases/
 │       ├── transactions/
-│       └── reports/
+│       └── ...
 │
 ├── routes/
+│   └── web.php
 │
+├── scripts/
+│   └── create_owner.php
+│
+├── screenshots/
+│
+├── bootstrap.php
+├── ndcms_schema.sql
 ├── tailwindcss
 └── README.md
 ```
 
-*Note: This is a conceptual overview. The actual repository structure may contain additional files and directories.*
+*The structure above highlights the main application directories.*
 
----
+## 🗄️ Database
 
-## 🚀 Installation
+NDCMS uses MariaDB as its relational database management system.
 
-Follow these steps to set up NDCMS locally.
+The database is designed to support interconnected operational modules, including:
+
+- Employee and user management
+- Product and category management
+- Ingredient and recipe management
+- Inventory and stock movements
+- Suppliers and purchasing
+- Purchase receiving
+- Cashier shifts
+- Sales transactions and transaction details
+
+Database schema:
+
+```text
+ndcms_schema.sql
+```
+
+## ⚙️ Installation & Setup
 
 ### 1. Clone the Repository
 
 ```bash
-git clone <repository-url>
-cd ndcms
+git clone <YOUR_REPOSITORY_URL>
+cd NDCMS
 ```
 
-### 2. Create the Database
+### 2. Prepare the Database
 
-Open MariaDB:
-
-```bash
-mariadb -u root -p
-```
-
-Create the database:
+Create a MariaDB database:
 
 ```sql
-CREATE DATABASE ndcms
-CHARACTER SET utf8mb4
-COLLATE utf8mb4_unicode_ci;
+CREATE DATABASE ndcms;
 ```
 
-### 3. Import Database Structure
-
-Import the database schema using the SQL files provided in the repository.
+Import the database schema:
 
 ```bash
-mariadb -u root -p ndcms < database/schema.sql
+mariadb -u root -p ndcms < ndcms_schema.sql
 ```
 
-*Adjust the SQL filename according to the actual repository.*
+### 3. Configure the Application
 
-### 4. Configure Database Connection
+Update the database connection settings in the application's configuration files.
 
-Update the database connection configuration with your local credentials.
+Make sure the database host, database name, username, and password match your local environment.
 
-Example:
+### 4. Create the Initial Owner Account
 
-```php
-return [
-    'host' => '127.0.0.1',
-    'database' => 'ndcms',
-    'username' => 'root',
-    'password' => '',
-];
-```
-
-*Use the actual configuration format implemented in the project.*
-
-### 5. Build Tailwind CSS
-
-NDCMS uses the Tailwind CSS Standalone CLI.
-
-Example:
+Run the owner account setup script:
 
 ```bash
-./tailwindcss \
-  -i resources/css/app.css \
-  -o public/assets/css/app.css \
-  --minify
+php scripts/create_owner.php
 ```
 
-Adjust the input and output paths if your repository uses a different configuration.
+Follow the script's instructions to create the initial owner account.
+
+### 5. Compile Tailwind CSS
+
+NDCMS uses the standalone Tailwind CSS CLI.
+
+Run:
+
+```bash
+./tailwindcss -i ./resources/css/app.css -o ./public/assets/css/app.css --watch
+```
+
+For a production build, compile without watch mode:
+
+```bash
+./tailwindcss -i ./resources/css/app.css -o ./public/assets/css/app.css --minify
+```
 
 ### 6. Run the Application
+
+Start the PHP development server:
 
 ```bash
 php -S 127.0.0.1:8080 -t public
 ```
 
-Open your browser:
+Open the application in your browser:
 
 ```text
 http://127.0.0.1:8080
 ```
 
----
+## 🔄 Business Process Workflow
 
-## ⚙️ Configuration
-
-Before running the application, ensure that the following requirements are available:
-
-- PHP 8.x or a version compatible with the application code.
-- MariaDB.
-- PDO MySQL extension.
-- Fileinfo extension for image upload functionality.
-- Writable storage directories where required.
-- Tailwind CSS Standalone CLI.
-
-Database credentials should be configured according to the application's existing database configuration.
-
----
-
-## 🔄 Business Workflow
-
-The primary operational workflow of NDCMS is organized as follows:
+The system supports the following operational workflow:
 
 ```text
-       MASTER DATA SETUP
-               │
-               ▼
-      SUPPLIER & PURCHASING
-               │
-               ▼
-        GOODS RECEIVING
-               │
-               ▼
-       INVENTORY UPDATED
-               │
-               ▼
-        CASHIER OPENS SHIFT
-               │
-               ▼
-        POS TRANSACTIONS
-               │
-               ▼
-       RECIPE CONSUMPTION
-               │
-               ▼
-       INVENTORY DEDUCTION
-               │
-               ▼
-      TRANSACTION RECORDS
-               │
-               ▼
-        REPORT GENERATION
+MASTER DATA
+    |
+    v
+PRODUCT & RECIPE MANAGEMENT
+    |
+    v
+PURCHASING
+    |
+    v
+GOODS RECEIVING
+    |
+    v
+INVENTORY UPDATE
+    |
+    v
+CASHIER OPENS SHIFT
+    |
+    v
+SALES TRANSACTION
+    |
+    v
+RECIPE-BASED INGREDIENT CONSUMPTION
+    |
+    v
+TRANSACTION & STOCK MOVEMENT RECORDS
+    |
+    v
+SHIFT RECONCILIATION
+    |
+    v
+BUSINESS REPORTING
 ```
 
-### Important Business Rules
+## 🔐 Security & Data Integrity
 
-- Purchase orders do not directly increase inventory.
-- Inventory increases when purchased goods are received.
-- Products configured as recipe-based require valid recipes.
-- Ingredient consumption is recorded during successful sales.
-- Sales transactions are associated with an active cashier shift.
-- Shift closing reconciles expected cash with actual cash.
+NDCMS incorporates several mechanisms to support secure and consistent application operations:
 
----
-
-## 🔐 Security
-
-Security is an important part of the NDCMS implementation.
-
-The system includes:
-
-- Password-based authentication.
-- Session-based user management.
-- CSRF token validation.
-- Role-Based Access Control.
-- Authentication and permission middleware.
+- Authentication and session-based access.
+- Role-based authorization.
+- CSRF protection for applicable forms.
 - PDO prepared statements for database operations.
-- Server-side validation of application input.
+- Server-side input validation.
+- Transactional database operations for critical workflows.
+- Stock validation before transaction completion.
+- Access restrictions based on user permissions.
 
----
+## 🎨 UI/UX Design
 
-## 📌 Development Status
+The NDCMS interface follows a **Soft Feminine** visual direction with an elegant and professional appearance.
 
-NDCMS has implemented its core operational modules.
+Design principles include:
 
-| Component | Status |
-|---|---|
-| System Architecture | Completed |
-| Database Design | Completed |
-| Authentication & Authorization | Implemented |
-| Dashboard | Implemented |
-| Employee Management | Implemented |
-| User Management | Implemented |
-| Product Management | Implemented |
-| Ingredient Management | Implemented |
-| Recipe Management | Implemented |
-| Inventory Management | Implemented |
-| Supplier Management | Implemented |
-| Purchasing Management | Implemented |
-| Shift Management | Implemented |
-| Point of Sale | Implemented |
-| Transaction Management | Implemented |
-| Reports | Completed |
-| Product Image Upload | Under verification |
-| Production Deployment | Pending final preparation |
-| User Documentation | Pending final preparation |
+- Clean and minimal layouts.
+- Warm coffee-inspired color palette.
+- Consistent spacing and typography.
+- Clear navigation hierarchy.
+- User-friendly operational interfaces.
+- Visual consistency across application modules.
 
----
+## 📌 Project Status
 
-## 🧭 Future Improvements
+NDCMS has progressed through the implementation of its core application modules, including authentication, dashboard, master data, inventory, purchasing, shifts, POS, transactions, and reports.
 
-Potential enhancements for future development include:
+Final deployment, documentation, client acceptance testing, and any remaining refinements should be tracked separately from the implemented application scope.
 
-- Product image upload and catalog enhancement.
-- Improved reporting and business analytics.
-- Automated database backup.
-- Production deployment and monitoring.
-- Additional operational insights.
-- Extended documentation and user onboarding.
+## 🚀 Future Improvements
 
----
+Potential future enhancements may include:
+
+- More advanced business analytics.
+- Automated database backup workflows.
+- Additional operational monitoring.
+- Enhanced application deployment and maintenance procedures.
 
 ## 📄 License
 
-This project is developed for **ND Coffee**.
+This project was developed for ND Coffee.
 
-Copyright © 2026 ND Coffee Management System.
-
-Usage, distribution, and modification rights are subject to the agreement between the developer and the project owner.
+Usage, distribution, modification, and ownership are subject to the agreement between the developer and the client.
 
 ---
 
 <p align="center">
-  <strong>☕ ND Coffee Management System</strong>
+  <strong>ND Coffee Management System</strong>
   <br>
   Simplify Operations. Manage Smarter. Serve Better.
   <br><br>
-  <sub>Built with dedication for better coffee shop management.</sub>
+  <sub>Developed with care for better coffee shop operations.</sub>
 </p>
